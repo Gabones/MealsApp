@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'screens/filters_screen.dart';
 import 'screens/meal_detail_screen.dart';
 import 'screens/category_meal_screen.dart';
 import 'screens/categories_screen.dart';
+import 'screens/tabs_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,10 +35,11 @@ class MyApp extends StatelessWidget {
       //home: CategoriesScreen(),
       initialRoute: '/',
       routes: {
-        '/': (ctx) => CategoriesScreen(),
+        '/': (ctx) => TabsScreen(),
         //'/category_meals': (ctx) => CategoryMealsScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(),
       },
       onGenerateRoute: (settings) { //quanto eu tento um pushNamed para um route que não existe
         print(settings.arguments);
